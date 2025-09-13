@@ -532,9 +532,9 @@
 
     // Sample crypto data with mock prices
     const mockCryptoData = [
-      { symbol: 'SOL', name: 'Solana', price: 142.35, change: 5.67 },
+      { symbol: 'SOL', name: 'Solana', price: 242.7, change: 7.67 },
       { symbol: 'USDC', name: 'USD Coin', price: 1.0001, change: 0.01 },
-      { symbol: 'USDT', name: 'Tether', price: 0.9999, change: -0.01 },
+      { symbol: 'USDT', name: 'Tether', price: 1, change: 1.01 },
       { symbol: 'RAY', name: 'Raydium', price: 2.45, change: -2.34 },
       { symbol: 'ORCA', name: 'Orca', price: 1.87, change: 8.92 }
     ];
@@ -632,7 +632,7 @@
       for (let i = 23; i >= 0; i--) {
         const time = new Date(now - i * 60 * 60 * 1000);
         labels.push(time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }));
-        data.push(140 + Math.random() * 10 - 5);
+        data.push(237 + Math.random() * 10 - 5);
       }
 
       chart = new Chart(ctx, {
