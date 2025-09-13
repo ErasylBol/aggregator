@@ -12,7 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <style>
-    /* === Telegram Mini App стили === */
+ 
     * {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
@@ -126,7 +126,6 @@
       padding: 0;
     }
 
-    /* === Market Table === */
     .crypto-table {
       width: 100%;
       border-collapse: collapse;
@@ -194,7 +193,7 @@
       font-weight: 600;
     }
 
-    /* === Jupiter Swap Card === */
+
     .jupiter-card {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -297,7 +296,7 @@
       text-align: center;
     }
 
-    /* === Routes === */
+
     .routes-container {
       margin-top: 16px;
       padding: 0 16px 16px;
@@ -322,7 +321,7 @@
       color: rgba(255,255,255,0.7);
     }
 
-    /* === Chart === */
+   
     .chart-container {
       padding: 16px;
       height: 250px;
@@ -343,7 +342,6 @@
       margin-top: 16px;
     }
 
-    /* === Wallet Connection === */
     .wallet-status {
       margin: 8px 16px;
       padding: 12px 16px;
@@ -378,7 +376,6 @@
       cursor: pointer;
     }
 
-    /* === Loading States === */
     .loading {
       opacity: 0.6;
       pointer-events: none;
@@ -413,7 +410,6 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Header -->
     <header class="header">
       <h1 class="header-title">
         Ventix
@@ -422,7 +418,6 @@
       <p class="header-subtitle">Solana DEXs</p>
     </header>
 
-    <!-- Wallet Status -->
     <div class="wallet-status" id="walletStatus">
       <div class="wallet-info">
         <span id="walletIcon">👛</span>
@@ -453,7 +448,6 @@
       </div>
     </section>
 
-    <!-- Price Chart -->
     <section class="card">
       <div class="card-header">
         <h2 class="card-title">📈 Price Chart</h2>
@@ -465,7 +459,7 @@
       </div>
     </section>
 
-    <!-- Jupiter Swap -->
+
     <section class="card jupiter-card" id="jupiterBlock">
       <div class="card-header">
         <h2 class="card-title">⚡ Instant Swap</h2>
@@ -513,12 +507,11 @@
   </div>
 
   <script>
-    // Initialize Telegram Web App
+
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
       Telegram.WebApp.ready();
       Telegram.WebApp.expand();
       
-      // Apply Telegram theme
       const tg = Telegram.WebApp;
       if (tg.themeParams) {
         document.documentElement.style.setProperty('--tg-bg-color', tg.themeParams.bg_color || '#ffffff');
@@ -696,7 +689,6 @@
       });
     }
 
-    // Jupiter integration functions
     function humanToSmallest(amountStr, symbol) {
       if (!amountStr || isNaN(Number(amountStr))) return null;
       const decimals = (symbol === "SOL") ? 9 : 6;
@@ -802,7 +794,6 @@
       document.getElementById('j_get_quote').addEventListener('click', getQuotes);
       document.getElementById('j_build_swap').addEventListener('click', executeSwap);
       
-      // Auto-refresh data every 30 seconds
       setInterval(loadCryptoData, 30000);
     });
 
